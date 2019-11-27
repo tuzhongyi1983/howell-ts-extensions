@@ -27,6 +27,15 @@
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   },
+  "files": [
+    "dist/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuzhongyi1983/howell-ts-extensions.git"
+  },
   "author": "Tzy",
   "license": "Howell",
   "version": "1.0.0"
