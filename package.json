@@ -1,6 +1,6 @@
 {
   "name": "howell-ts-extensions",
-  "description": "",
+  "description": "typescript 扩展工具",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "directories": {
