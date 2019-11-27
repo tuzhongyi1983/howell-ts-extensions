@@ -18,4 +18,12 @@ String.prototype.addQueryStringIfNeed = function (name, value) {
         }
     }
 };
+String.prototype.toArray = function (convert) {
+    if (convert === undefined) {
+        return this.split(",");
+    }
+    else {
+        return this.split(",").map(ele => convert(ele));
+    }
+};
 //# sourceMappingURL=string-extensions.js.map

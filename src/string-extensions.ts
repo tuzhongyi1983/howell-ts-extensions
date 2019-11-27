@@ -2,7 +2,7 @@ import URL = require("url-parse");
 
 declare global {
   /**字符串扩展接口 */
-  interface String {
+  export interface String {
     addQueryStringIfNeed(name: string, value: any | undefined | null): string;
     toArray<T>(convert?: (element: string) => T): Array<T>;
   }
@@ -35,6 +35,7 @@ String.prototype.toArray = function<T>(
   }
 };
 
+export {};
 //Object.defineProperty(String.prototype, "addQueryStringIfNeed", {
 //  value(name: string, value: any | undefined | null): string {
 //}});
