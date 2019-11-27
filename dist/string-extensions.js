@@ -41,4 +41,5 @@ String.prototype.toArray = function (convert) {
         return this.split(",").map(ele => convert(ele));
     }
 };
+exports.default = String;
 //# sourceMappingURL=string-extensions.js.map

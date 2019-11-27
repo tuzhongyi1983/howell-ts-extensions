@@ -1,5 +1,4 @@
 import URL = require("url-parse");
-
 declare global {
   /**字符串扩展接口 */
   export interface String {
@@ -54,8 +53,7 @@ String.prototype.toArray = function<T>(
     return this.split(",").map(ele => convert(ele) as T);
   }
 };
-
-export {};
+export default String;
 //Object.defineProperty(String.prototype, "addQueryStringIfNeed", {
 //  value(name: string, value: any | undefined | null): string {
 //}});

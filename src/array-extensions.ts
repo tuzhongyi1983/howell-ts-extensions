@@ -1,6 +1,6 @@
 declare global {
   /**数组扩展接口 */
-  interface Array<T> {
+  export interface Array<T> {
     /**转换为SQL字符串，格式如下 A1,A2,A3... */
     toArrayString(): string;
   }

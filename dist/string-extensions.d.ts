@@ -5,4 +5,4 @@ declare global {
         toArray<T>(convert?: (element: string) => T): Array<T>;
     }
 }
-export {};
+export default String;

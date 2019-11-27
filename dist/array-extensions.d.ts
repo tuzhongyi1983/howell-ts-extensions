@@ -1,5 +1,5 @@
 declare global {
-    interface Array<T> {
+    export interface Array<T> {
         toArrayString(): string;
     }
 }

@@ -1,2 +1,2 @@
-export * from "./string-extensions";
-export * from "./array-extensions";
+import "./string-extensions";
+import "./array-extensions";
