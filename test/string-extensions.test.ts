@@ -17,3 +17,12 @@ test("String.ToArray", async () => {
   expect(numbers.toString()).toBe(base);
   expect(strings.toString()).toBe(base);
 });
+test("String.AddPagedQueryStringIfNeed", async () => {
+  const base = "http://192.168.21.244:9000/Villages";
+  let s = base.addPagedQueryStringIfNeed(1, 2);
+  expect(s).toBe("http://192.168.21.244:9000/Villages?PageIndex=1&PageSize=2");
+  let s2 = base.addPagedQueryStringIfNeed(1, undefined);
+  expect(s2).toBe(base);
+  let s3 = base.addPagedQueryStringIfNeed(0, 0);
+  expect(s3).toBe(base);
+});

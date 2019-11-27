@@ -18,6 +18,21 @@ String.prototype.addQueryStringIfNeed = function (name, value) {
         }
     }
 };
+String.prototype.addPagedQueryStringIfNeed = function (pageIndex, pageSize) {
+    if (typeof pageIndex === "number" &&
+        pageIndex > 0 &&
+        typeof pageSize === "number" &&
+        pageSize > 0) {
+        var queryString = new URL(`${this}`).query;
+        if (typeof queryString === "string" && queryString !== "") {
+            return `${this}&PageIndex=${pageIndex}&PageSize=${pageSize}`;
+        }
+        else {
+            return `${this}?PageIndex=${pageIndex}&PageSize=${pageSize}`;
+        }
+    }
+    return `${this}`;
+};
 String.prototype.toArray = function (convert) {
     if (convert === undefined) {
         return this.split(",");

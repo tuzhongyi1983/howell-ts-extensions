@@ -4,6 +4,7 @@ declare global {
   /**字符串扩展接口 */
   export interface String {
     addQueryStringIfNeed(name: string, value: any | undefined | null): string;
+    addPagedQueryStringIfNeed(pageIndex?: number, pageSize?: number): string;
     toArray<T>(convert?: (element: string) => T): Array<T>;
   }
 }
@@ -23,6 +24,25 @@ String.prototype.addQueryStringIfNeed = function(
       return `${this}?${name}=${value}`;
     }
   }
+};
+String.prototype.addPagedQueryStringIfNeed = function(
+  pageIndex?: number,
+  pageSize?: number
+) {
+  if (
+    typeof pageIndex === "number" &&
+    pageIndex > 0 &&
+    typeof pageSize === "number" &&
+    pageSize > 0
+  ) {
+    var queryString = new URL(`${this}`).query;
+    if (typeof queryString === "string" && queryString !== "") {
+      return `${this}&PageIndex=${pageIndex}&PageSize=${pageSize}`;
+    } else {
+      return `${this}?PageIndex=${pageIndex}&PageSize=${pageSize}`;
+    }
+  }
+  return `${this}`;
 };
 
 String.prototype.toArray = function<T>(
