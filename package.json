@@ -2,20 +2,9 @@
   "name": "howell-ts-extensions",
   "description": "typescript 扩展工具",
   "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "lint": "tslint 'index.ts'"
-  },
-  "keywords": [
-    "typescript",
-    "extensions",
-    "howell"
-  ],
   "dependencies": {
     "@types/url-parse": "^1.4.3",
     "tslib": "^1.10.0",
@@ -27,6 +16,16 @@
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
   },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint 'index.ts'"
+  },
+  "keywords": [
+    "typescript",
+    "extensions",
+    "howell"
+  ],
   "files": [
     "dist/**",
     "README.md",
@@ -36,6 +35,7 @@
     "type": "git",
     "url": "git+https://github.com/tuzhongyi1983/howell-ts-extensions.git"
   },
+  "typings": "./dist/index.d.ts",
   "author": "Tzy",
   "license": "Howell",
   "version": "1.0.0"
