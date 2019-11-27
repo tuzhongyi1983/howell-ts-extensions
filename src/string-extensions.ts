@@ -1,8 +1,10 @@
 import URL = require("url-parse");
+
 declare global {
   /**字符串扩展接口 */
   interface String {
     addQueryStringIfNeed(name: string, value: any | undefined | null): string;
+    toArray<T>(convert?: (element: string) => T): Array<T>;
   }
 }
 String.prototype.addQueryStringIfNeed = function(
@@ -20,6 +22,16 @@ String.prototype.addQueryStringIfNeed = function(
     } else {
       return `${this}?${name}=${value}`;
     }
+  }
+};
+
+String.prototype.toArray = function<T>(
+  convert?: (element: string) => T
+): Array<T> {
+  if (convert === undefined) {
+    return this.split(",");
+  } else {
+    return this.split(",").map(ele => convert(ele) as T);
   }
 };
 
